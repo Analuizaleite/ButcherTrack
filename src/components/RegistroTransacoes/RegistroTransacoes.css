@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    text-align: center;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .header {
+    background-color: #7C3D31;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+ 
+  
+  h1 {
+    font-size: 24px; 
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .nav {
+    background-color: #7C3D31;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens da navbar quebrem linha em telas menores */
+  }
+  
+  .nav span {
+    color: white;
+    margin: 0 40px; /* Espaçamento reduzido em telas menores */
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nav .active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr)); 
+    grid-gap: 50px;
+    width: 80%; 
+    margin: 0 auto; 
+  }
+  
+  /* Media Queries para telas menores */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 20px; /* Reduz o tamanho da fonte do título */
+    }
+  
+    .nav {
+      flex-direction: column; /* Altera para coluna em telas menores */
+      align-items: center; /* Centraliza os itens da navbar */
+    }
+  
+    .nav span {
+      margin: 10px 0; /* Espaçamento vertical entre os itens da navbar */
+      font-size: 16px; /* Diminui o tamanho da fonte */
+    }
+  
+    .grid-container {
+      grid-template-columns: 1fr; /* Uma coluna em telas menores */
+      padding: 20px; /* Reduz o padding para telas menores */
+    }
+  
+    .grid-item {
+      height: 150px; /* Diminui a altura dos quadrados */
+      font-size: 14px; /* Diminui o tamanho da fonte dos textos */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 18px; /* Reduz ainda mais o tamanho da fonte do título */
+    }
+  
+    .grid-item {
+      height: 120px; /* Altura ainda menor para os quadrados em telas muito pequenas */
+      font-size: 12px; /* Reduz o tamanho da fonte dos textos */
+    }
+  }
+  
+  .grid-item {
+    background-color: #F2F0F0;
+    height: 200px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    background-color: #e0e0e0;
+  }
+  
