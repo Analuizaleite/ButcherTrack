@@ -6,8 +6,7 @@ import RegistroTransacoes from './components/RegistroTransacoes/RegistroTransaco
 function App() {
   return (
     <div className="App">
-      
-      <RegistroTransacoes/>
+      <Login/>
     </div>
   );
 }

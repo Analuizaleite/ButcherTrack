@@ -1,0 +1,29 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./server  # Caminho para o diretório do backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env   # Carregar variáveis de ambiente do arquivo .env
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./src  # Caminho para o diretório src onde está o frontend
+    ports:
+      - "3000:80"
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}  # Lendo variáveis do .env
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
